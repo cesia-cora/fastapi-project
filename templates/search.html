@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block body %}
+
+{% if term %}
+    <h2>Resultados de búsqueda para "{{ term }}"</h2>
+    {% for book in results %}
+        <!-- Código para mostrar cada libro -->
+    {% endfor %}
+{% else %}
+    <h2>Todos los libros</h2>
+    {% for book in books_list %}
+        <!-- Código para mostrar cada libro -->
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

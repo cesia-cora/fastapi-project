@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', path='icons/book_logo.png') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{{ url_for('static', path='style/styles.css') }}" rel="stylesheet">
+    <title>Book Catalogue | Calliope Digital Library</title>
+    {% block title %}
+    {% endblock %}
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper white">
+            <img src=""> <a href="/" class="brand-logo grey-text text-darken-4">Calliope Digital Library</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="" class="grey-text text-darken-3">About</a></li>
+                <li><a href="" class="grey-text text-darken-3">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    {% block body %}
+    {% endblock %}
+
+    <footer class="page-footer white">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="black-text">Library</h5>
+                    <p class="grey-text text-darken-4">Library is a free accesible book catalog.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="black-text">About Us</h5>
+                    <ul>
+                        <li><a class="grey-text text-darken-3" href="#!">API</a></li>
+                        <li><a class="grey-text text-darken-3" href="#!">Repository</a></li>
+                        <li><a class="grey-text text-darken-3" href="#!">Privacy Policy</a></li>
+                        <li><a class="grey-text text-darken-3" href="#!">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container grey-text text-darken-3">
+                &copy; 2023 Copyright
+                <a class="grey-text text-darken-4 right" href="#!">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

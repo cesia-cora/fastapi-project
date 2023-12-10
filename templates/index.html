@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<form action="/search" method="get">
+    <input type="text" name="term" placeholder="Buscar libros...">
+    <button type="submit">Buscar</button>
+</form>
+
+<div class="cards">
+    {% for book in books_list %}
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{ book.image_url }}">
+                </div>
+                <div class="card-content">
+                    <span class="card-title">{{ book.title }}</span>
+                    <p>Author/s: {{ book.authors }}
+                        <br>Language: {{ book.language }}
+                        <br>Publisher: {{ book.publisher }}
+                        <br>Number of pages: {{ book.number_of_pages }}
+                        <br>Release: {{ book.release }}
+                        <br>ISBN: {{ book.isbn }}
+                    </p>
+                    <br>
+                    <a class="waves-effect waves-light btn-small grey lighten-2 black-text">VIEW DETAILS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+<div class="pagination">
+    {% if total_pages > 1 %}
+    {% if page > 1 %}
+    <a href="?page={{ page - 1 }}">Anterior</a>
+    {% endif %}
+
+    {% for p in range(1, total_pages + 1) %}
+    {% if p == page %}
+    <span class="current-page">{{ p }}</span>
+    {% else %}
+    <a href="?page={{ p }}">{{ p }}</a>
+    {% endif %}
+    {% endfor %}
+
+    {% if page < total_pages %} <a href="?page={{ page + 1 }}">Siguiente</a>
+        {% endif %}
+        {% endif %}
+</div>
+
+{% endblock %}
