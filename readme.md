@@ -3,12 +3,12 @@
 <hr>
 
 ### Overview:
-Book API created with Python and MondoDB.
+Book API created with Python and MongoDB.
 
 ### Features:
 * CRUD method
 * User authentication
-* Search and pagination
+* Pagination
 
 ### Command to run:
 
